@@ -3,7 +3,7 @@ import Count from '@/app/components/count';
 
 export default function Counter() {
     return (
-    <div className="bg-black min-w-screen min-h-screen">
+    <div className="bg-primary min-w-screen min-h-screen">
         <Navbar />
         <Count />
     </div>

@@ -1,7 +1,12 @@
+import Navbar from "@/app/components/navbar";
+import Check from "@/app/components/check";
+
+
 export default function Checklist() {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black">
-      <h1 className="text-white">Checklist</h1>
-    </div>
-  );
+    return (
+        <div className="bg-primary min-w-screen min-h-screen">
+            <Navbar />
+            <Check />
+        </div>
+    );
 }

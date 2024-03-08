@@ -1,7 +1,11 @@
+import Navbar from "@/app/components/navbar";
+import GrowBTN from "@/app/components/growBtn";
+
 export default function Grow() {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black">
-      <h1 className="text-white">Grow</h1>
-    </div>
-  );
+    return (
+        <div className="bg-primary min-w-screen min-h-screen">
+            <Navbar />
+            <GrowBTN />
+        </div>
+    );
 }
