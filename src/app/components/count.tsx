@@ -4,7 +4,7 @@ import React from 'react';
 const Count = () => {
     const [count, setCount] = React.useState(0);
     const [startingCount, setStart] = React.useState(0);
-    const [countType, setCountType] = React.useState('Even' || 'Odd');
+    const [countType, setCountType] = React.useState('');
 
     const handleReset = () => {
         setCount(startingCount);
@@ -22,31 +22,30 @@ const Count = () => {
         }
         
     };
-
     React.useEffect(() => {
         if (count % 2 === 0) {
-            setCountType('Even');
+            setCountType('EVEN');
         } else {
-            setCountType('Odd');
+            setCountType('ODD');
         }
     }, [count]);
 
     return (
-        <div className="flex min-h-[92vh] flex-row items-center justify-evenly bg-primary p-24 border-2">
+        <div className="flex min-h-[92vh] flex-row items-center justify-evenly bg-primary p-24">
             {/* <h1 className="text-white text-[12px] md:text-sm lg:text-lg">Counter</h1> */}
-            <div className="flex items-start justify-start">
-                <button onClick={decrement} id='btn_minus' className="text-white p-4 rounded-full bg-transparent border-2">-</button>
+            <div className="flex items-start justify-start w-screen">
+                <button onClick={decrement} id='btn_minus' className="text-white text-4xl text-center ml-5 p-4 rounded-full bg-transparent border-2 w-[80px] h-[80px] ">-</button>
             </div>
-            <div className="flex flex-col space-x-4 items-center justify-center text-center align-top p-8 lg:p-6 text-[12px] md:text-sm lg:text-lg">
+            <div className="flex flex-col h-[70vh] items-center justify-evenly text-center p-8 lg:p-6 text-[12px] md:text-sm lg:text-lg w-screen">
+                <h1 id='ds_type' className="text-white text-[40px] md:text-[50px] lg:text-[70px] md:m-10 lg:m-20">{countType}</h1>
+                <h1 id='count' className="text-white text-[100px] md:text-[150px] lg:text-[200px]">{count}</h1>
+                <button onClick={handleReset} id='btn_plus' className="bg-transparent hover:bg-gray-700 border-2 text-white p-2 md:p-4 lg:p-6 rounded-lg m-6 md:mt-10 lg:mt-20">Reset</button>
                 
-                <h1 id='count' className="text-white text-[12px] md:text-sm lg:text-lg">{count}</h1>
-                <button onClick={handleReset} id='btn_plus' className="bg-white text-black p-4 rounded-lg">Reset</button>
-                <h1 id='ds_type' className="text-white text-[12px] md:text-sm lg:text-lg">{countType}</h1>
                 
             </div>
             
-            <div>
-                <button onClick={increment} id='btn_plus' className="text-white p-4 rounded-full bg-transparent border-2">+</button>
+            <div className='flex items-start justify-end w-screen'>
+                <button onClick={increment} id='btn_plus' className="text-white text-xl text-center mr-5 p-4 rounded-full bg-transparent border-2 w-[80px] h-[80px]">+</button>
             </div>
             
         </div>

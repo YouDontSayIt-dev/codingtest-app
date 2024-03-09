@@ -17,23 +17,43 @@ const Check: React.FC = () => {
     };
 
     return (
-        <div className="flex min-h-[92vh] flex-col items-center bg-black justify-center p-24">
+        <div className="flex min-h-[92vh] flex-col items-center bg-primary justify-center p-24 border-2">
             <h1>Todo List</h1>
-            <input
-                type="text"
-                value={newTodo}
-                className='text-black p-4 rounded-lg bg-white mt-4 mb-4'
-                onChange={(e) => setNewTodo(e.target.value)}
-            />
-            <button onClick={addTodo}>Add</button>
-            <ul>
+            <div className='flex flex-row space-x-2'>
+                <input
+                    type="text"
+                    placeholder='Add a new todo...'
+                    value={newTodo}
+                    className='text-black p-4 rounded-lg bg-white mt-4 mb-4'
+                    onChange={(e) => setNewTodo(e.target.value)}
+                />
+                <button onClick={addTodo}>Add</button>
+            </div>
+            
+            <div className='border-2 w-full'>
+                <ul className='flex flex-col flex-wrap p-5 m-auto gap-2'>
                 {todos.map((todo, index) => (
                     <li key={index}>
-                        {todo}
-                        <button className='ml-2 bg-white p-4 text-black' onClick={() => removeTodo(index)}>Remove</button>
+                        <div className='flex flex-row justify-between items-center text-center'>
+                            <div className='items-center p-4'>
+                                <input id="checkbox" className='w-5 h-5' type="checkbox" />
+                                <label htmlFor="checkbox" className='text-2xl'> {todo}</label>
+                            </div>
+                            <div className='flex border-2 justify-between items-center'>
+                                
+                                <button className='bg-white p-4 text-black' onClick={() => removeTodo(index)}>Remove</button>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        
                     </li>
                 ))}
             </ul>
+            </div>
+            
         </div>
     );
 };
