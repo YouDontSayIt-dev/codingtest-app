@@ -1,36 +1,36 @@
 import React, { useEffect, useState } from 'react';
 
 const Calculate = () => {
-    const [valueOne, setValueOne] = useState<number>();
-    const [valueTwo, setValueTwo] = useState<number>();
-    const [result, setResult] = useState<number>(0);
+    const [valueOne, setValueOne] = useState<number>(); // State variable for the first input value
+    const [valueTwo, setValueTwo] = useState<number>(); // State variable for the second input value
+    const [result, setResult] = useState<number>(0); // State variable for the sum of the two input values
 
     useEffect(() => {
-        setResult((valueOne ?? 0) + (valueTwo ?? 0));
+        setResult((valueOne ?? 0) + (valueTwo ?? 0)); // Update the result whenever the input values change
     }, [valueOne, valueTwo]);
 
 
     const addValueOne = (e: React.ChangeEvent<HTMLInputElement>) => {
         const numValue = parseInt(e.target.value);
         if (numValue <= 0){
-            setValueOne(0);
+            setValueOne(0); // If the input value is less than or equal to 0, set it to 0
         }else{
-            setValueOne(numValue);
+            setValueOne(numValue); // Otherwise, set it to the parsed integer value
         }
     }
 
     const addValueTwo = (e: React.ChangeEvent<HTMLInputElement>) => {
         const numValue = parseInt(e.target.value);
         if (numValue <= 0){
-            setValueTwo(0);
+            setValueTwo(0); // If the input value is less than or equal to 0, set it to 0
         }else{
-            setValueTwo(numValue);
+            setValueTwo(numValue); // Otherwise, set it to the parsed integer value
         }
     }
 
     const handleReset = () => {
-        setValueOne(0);
-        setValueTwo(0);
+        setValueOne(0); // Reset the first input value to 0
+        setValueTwo(0); // Reset the second input value to 0
     }
 
     return (
@@ -42,7 +42,7 @@ const Calculate = () => {
         </div>
         <div className='p-5 flex'>
             <p>
-                Sum is: {result}
+                Sum is: {result} {/* Display the sum of the two input values */}
             </p>
             
             </div>

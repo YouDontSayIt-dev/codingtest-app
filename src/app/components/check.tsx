@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 
 const Check: React.FC = () => {
-    const [todos, setTodos] = useState<string[]>([]);
-    const [newTodo, setNewTodo] = useState('');
+    const [todos, setTodos] = useState<string[]>([]); // State variable to store the list of todos
+    const [newTodo, setNewTodo] = useState(''); // State variable to store the value of the new todo input field
 
     const addTodo = () => {
-        if (newTodo.trim() !== '') {
-            setTodos([...todos, newTodo]);
-            setNewTodo('');
+        if (newTodo.trim() !== '') { // Check if the new todo is not empty or only whitespace
+            setTodos([...todos, newTodo]); // Add the new todo to the list of todos
+            setNewTodo(''); // Clear the value of the new todo input field
         }
     };
 
     const removeTodo = (index: number) => {
-        const updatedTodos = todos.filter((_, i) => i !== index);
-        setTodos(updatedTodos);
+        const updatedTodos = todos.filter((_, i) => i !== index); // Remove the todo at the specified index from the list of todos
+        setTodos(updatedTodos); // Update the list of todos
     };
 
     return (
@@ -25,9 +25,9 @@ const Check: React.FC = () => {
                     placeholder='Add a new todo...'
                     value={newTodo}
                     className='text-black p-4 rounded-lg bg-white mt-4 mb-4'
-                    onChange={(e) => setNewTodo(e.target.value)}
+                    onChange={(e) => setNewTodo(e.target.value)} // Update the value of the new todo input field
                 />
-                <button onClick={addTodo}>Add</button>
+                <button onClick={addTodo}>Add</button>  {/* Button to add a new todo */ }
             </div>
             
             <div className='border-2 w-full'>
@@ -37,21 +37,15 @@ const Check: React.FC = () => {
                         <div className='flex flex-row justify-between items-center text-center'>
                             <div className='items-center p-4'>
                                 <input id="checkbox" className='w-5 h-5' type="checkbox" />
-                                <label htmlFor="checkbox" className='text-2xl'> {todo}</label>
+                                <label htmlFor="checkbox" className='text-2xl'> {todo}</label> {/* Display the todo text*/}
                             </div>
                             <div className='flex border-2 justify-between items-center'>
-                                
-                                <button className='bg-white p-4 text-black' onClick={() => removeTodo(index)}>Remove</button>
+                                <button className='bg-white p-4 text-black' onClick={() => removeTodo(index)}>Remove</button> {/* Button to remove the todo */}
                             </div>
                         </div>
-                        
-                        
-                        
-                        
-                        
                     </li>
                 ))}
-            </ul>
+                </ul>
             </div>
             
         </div>
