@@ -11,10 +11,8 @@ jobs:
 
         runs-on: ubuntu-latest # Specifies the virtual environment to run the job in.
 
-        defaults:
-          run:
-            working-directory: './codingtest-app'
-
+       
+            
         strategy:
             matrix:
               node-version: [18.x]
@@ -26,7 +24,7 @@ jobs:
               with:
                node-version: ${{ matrix.node-version }}
                cache: 'npm'
-               cache-dependency-path: './codingtest-app/package-lock.json'
+               cache-dependency-path: 'package-lock.json'
 
             # Install dependencies, build, and test
             - name: Install dependencies

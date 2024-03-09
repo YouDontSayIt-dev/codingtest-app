@@ -13,10 +13,7 @@ jobs:
     build:
         runs-on: ubuntu-latest # The type of runner that the job will run on
         
-        defaults:
-            run:
-                working-directory: './codingtest-app'
-
+        
         strategy:
             matrix:
                 node-version: [18.x]
@@ -30,7 +27,7 @@ jobs:
                   with:
                     node-version: ${{ matrix.node-version }}
                     cache: 'npm'
-                    cache-dependency-path: './codingtest-app/package-lock.json'
+                    cache-dependency-path: 'package-lock.json'
                 
                 # Install dependencies, build, and test
                 - run: npm ci
