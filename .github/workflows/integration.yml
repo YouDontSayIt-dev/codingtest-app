@@ -35,3 +35,6 @@ jobs:
                 # Install dependencies, build, and test
                 - run: npm ci
                 - run: npm run build
+                - run: npx playwright install --with-deps
+                - run: npx playwright test
+                

@@ -40,7 +40,7 @@ const Check: React.FC = () => {
                                 <label htmlFor="checkbox" className='text-2xl'> {todo}</label> {/* Display the todo text*/}
                             </div>
                             <div className='flex border-2 justify-between items-center'>
-                                <button className='bg-white p-4 text-black' onClick={() => removeTodo(index)}>Remove</button> {/* Button to remove the todo */}
+                                <button data-testid="btn_remove" className='bg-white p-4 text-black' onClick={() => removeTodo(index)}>Remove</button> {/* Button to remove the todo */}
                             </div>
                         </div>
                     </li>
