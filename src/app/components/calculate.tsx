@@ -34,7 +34,7 @@ const Calculate = () => {
     }
 
     return (
-    <div className="flex min-h-[92vh] flex-col items-center bg-primary justify-center p-24 border-2">
+    <div className="flex min-h-[92vh] flex-col items-center bg-primary justify-center p-24">
         <h1 className="text-white text-[12px] md:text-sm lg:text-4xl mb-20">Simple Calculator</h1>
         <div className="flex flex-col w-auto gap-2 border-2 space-y-4 items-center justify-center text-center align-top p-8 lg:p-6 text-[12px] md:text-sm lg:text-lg">
             <input type="number" placeholder='First Input' value={valueOne} className=' text-black text-center' onChange={addValueOne} />

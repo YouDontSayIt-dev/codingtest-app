@@ -17,17 +17,17 @@ const Check: React.FC = () => {
     };
 
     return (
-        <div className="flex min-h-[92vh] flex-col items-center bg-primary justify-center p-24 border-2">
+        <div className="flex min-h-[92vh] flex-col items-center bg-primary justify-center p-24">
             <h1>Todo List</h1>
-            <div className='flex flex-row space-x-2'>
+            <div className='flex flex-row space-x-3 w-auto'>
                 <input
                     type="text"
                     placeholder='Add a new todo...'
                     value={newTodo}
-                    className='text-black p-4 rounded-lg bg-white mt-4 mb-4'
+                    className='text-black p-4 rounded-lg bg-white mt-4 mb-4 w-full m-auto'
                     onChange={(e) => setNewTodo(e.target.value)} // Update the value of the new todo input field
                 />
-                <button onClick={addTodo}>Add</button>  {/* Button to add a new todo */ }
+                <button onClick={addTodo} className=''>Add</button>  {/* Button to add a new todo */ }
             </div>
             
             <div className='border-2 w-full'>
